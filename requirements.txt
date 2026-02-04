@@ -32,3 +32,6 @@ tqdm
 # Logging 
 loguru
 
+#streamlit
+streamlit
+requests
