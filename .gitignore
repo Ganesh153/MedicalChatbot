@@ -6,6 +6,11 @@ dist/
 wheels/
 *.egg-info
 
+#uploaded docs
+backend/upladed_docs
+uploaded_docs
+
+
 # Virtual environments
 .venv
 backend/.env

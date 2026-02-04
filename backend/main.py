@@ -12,7 +12,7 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=["*"],
     allow_methods=["*"],
-    allow_header=["*"]
+    allow_headers=["*"]
 )
 
 #Middleware exception handlers

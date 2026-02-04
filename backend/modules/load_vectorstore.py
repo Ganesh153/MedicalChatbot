@@ -12,7 +12,7 @@ load_dotenv()
 
 PINECONE_API_KEY= os.getenv("PINECONE_API_KEY")
 PINECONE_ENV="us-east-1"
-PINECONE_INDEX_NAME="medical_index"
+PINECONE_INDEX_NAME="medical-index"
 
 # Uploaded files will be stored here
 UPLOAD_DIR="./uploaded_docs"
@@ -56,10 +56,19 @@ def load_vectorstore(uploaded_files):
         chunks = splitter.split_documents(documents)
 
         # retrieving the text and metadata of any particular chunk
-        texts = [chunk.page_content for chunk in chunks]
-        metadata=[chunk.metadata for chunk in chunks]
-        # getting the ids of chunks - dividing the chunks with the name of id
-        ids = [f"{Path(file_path).stem} - {i}" for i in range(chunks)]
+        texts = []
+        metadata = []
+        ids = []
+        for i, chunk in enumerate(chunks):
+            chunk_id = f"{Path(file_path).stem} - {i}"
+            ids.append(chunk_id)
+            texts.append(chunk.page_content)
+
+            chunk_metadata = chunk.metadata.copy()
+            chunk_metadata["text"] = chunk.page_content
+            chunk_metadata.setdefault("source", str(Path(file_path).name))
+            chunk_metadata["chunk_id"] = chunk_id
+            metadata.append(chunk_metadata)
 
         # 3. Embedding
         print("Embedding chunks")
