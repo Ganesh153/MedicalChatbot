@@ -43,7 +43,7 @@ LLM-generated Answer
 | Component  | Tech Used                           |
 | ---------- | --------------------------          |
 | LLM        | Groq API (openai/gpt-oss-120b)      |
-| Embeddings | Google Generative AI / BGE          |
+| Embeddings | HuggingFace Sentence-transformers   |
 | Vector DB  | Pinecone                            |
 | Framework  | LangChain                           |
 | Backend    | FastAPI                             |
