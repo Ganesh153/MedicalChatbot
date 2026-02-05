@@ -1,33 +1,27 @@
+torch==2.2.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 fastapi
 uvicorn[standard]
 python-multipart
 
-# langchain
 langchain
 langchain-community
 langchain-core
 langchain-groq
 
-# Vector Store
 pinecone
 chromadb
 faiss-cpu
 
-# Embeddings
 langchain-huggingface
 sentence-transformers
 langchain-google-genai
 
-# PDF Parsing
 PyPDF
-
-# Environment variables
 python-dotenv
 
-# Typing and utilities
 pydantic
 requests
 tqdm
-
-# Logging 
 loguru

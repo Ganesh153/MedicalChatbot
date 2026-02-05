@@ -6,6 +6,10 @@ from routes.ask_question import router as query_router
 
 app=FastAPI(title="Medical Assistant API", description="API for AI Medical Assistant ChatBot")
 
+@app.get("/")
+def health_check():
+    return {"status": "ok", "message": "Medical Chatbot API running"}
+
 #CORS setup
 app.add_middleware(
     CORSMiddleware,
