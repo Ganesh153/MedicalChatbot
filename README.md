@@ -31,7 +31,7 @@ LLM-generated Answer
 
 - Upload medical PDFs (notes, books, etc.)
 - Auto-extracts text and splits into semantic chunks
-- Embeds using Google/BGE embeddings
+- Embeds using HuggingFace Sentence-transformers embeddings
 - Stores vectors in **Pinecone DB**
 - Uses **Groq's openai/gpt-oss-120b** via LangChain
 - FastAPI backend with endpoints for file upload and Q\&A
